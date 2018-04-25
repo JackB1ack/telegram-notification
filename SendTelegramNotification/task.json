@@ -1,0 +1,132 @@
+{
+  "id": "03cc3c90-4737-11e8-adef-bd824f485eb1",
+  "name": "SendTelegramNotification",
+  "friendlyName": "Telegram Notification",
+  "description": "Send custom message to telegram chat",
+  "author": "Evgeny Chernyi",
+  "helpMarkDown": "https://github.com/JackB1ack/TelegramNotificationTask",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "0"
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "Send Telegram Notification",
+  "groups": [
+    {
+        "name": "botConfig",
+        "displayName": "Telegram Bot Configuration",
+        "isExpanded": true
+    },
+    {
+        "name": "notificationData",
+        "displayName": "Notification Customization",
+        "isExpanded": false
+    }
+    ],
+  "inputs": [
+    {
+        "name": "botToken",
+        "type": "string",
+        "label": "Bot Token",
+        "defaultValue": "",
+        "required": true,
+        "groupName": "botConfig",
+        "helpMarkDown": "Telegram Bot Token"
+    },
+    {
+        "name": "getChatId",
+        "type": "boolean",
+        "label": "Get chat ID",
+        "defaultValue": "false",
+        "required": false,
+        "groupName": "botConfig",
+        "helpMarkDown": "Check this box if it's your first time running the task and you don't know chat ID."
+    },
+    {
+        "name": "chats",
+        "type": "string",
+        "label": "Chat IDs",
+        "defaultValue": "",
+        "required": false,
+        "groupName": "botConfig",
+        "helpMarkDown": "Target chat id's to notify (use coma as a delimiter). [More information about chat id] ()",
+        "visibleRule":"getChatId = false"
+    },
+    {
+        "name": "taskStatus",
+        "type": "boolean",
+        "label": "Show task status",
+        "defaultValue": "true",
+        "required": false,
+        "groupName": "notificationData",
+        "helpMarkDown": "Send information about task status (e.g Failed, Succeeded)"
+    },
+    {
+        "name": "message",
+        "type": "string",
+        "label": "Message Text",
+        "defaultValue": "",
+        "required": false,
+        "groupName": "notificationData",
+        "helpMarkDown": "Custom text added to message. You can use [html markup](https://core.telegram.org/bots/api#html-style) (optional)"
+    },
+    {
+        "name": "teamUrl",
+        "type": "boolean",
+        "label": "Link to project",
+        "defaultValue": "false",
+        "required": false,
+        "groupName": "notificationData",
+        "helpMarkDown": "Add project URL (e.g https://yourteam.visualstudio.com/)"
+    },
+    {
+        "name": "buildQueuedBy",
+        "type": "boolean",
+        "label": "Queued By",
+        "defaultValue": "false",
+        "required": false,
+        "groupName": "notificationData",
+        "helpMarkDown": "Add info about who started the build"
+    },
+    {
+        "name": "buildNumber",
+        "type": "boolean",
+        "label": "Build Number",
+        "defaultValue": "false",
+        "required": false,
+        "groupName": "notificationData",
+        "helpMarkDown": "Add build number to message"
+    },
+    {
+        "name": "releaseRequestedFor",
+        "type": "boolean",
+        "label": "Requested for",
+        "defaultValue": "false",
+        "required": false,
+        "groupName": "notificationData",
+        "helpMarkDown": "Add info about who caused the release"
+    },
+    {
+        "name": "releaseName",
+        "type": "boolean",
+        "label": "Release Name",
+        "defaultValue": "false",
+        "required": false,
+        "groupName": "notificationData",
+        "helpMarkDown": "Add release name to message"
+    }
+],
+  "execution": {
+    "Node": {
+      "target": "task.js",
+      "argumentFormat": ""
+    }
+  }
+}

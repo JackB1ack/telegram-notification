@@ -1,0 +1,58 @@
+{
+    "manifestVersion": 1,
+    "id": "telegram-notification-extension",
+    "version": "0.0.25",
+    "name": "Telegram Notification",
+    "publisher": "EvgenyChernyi",
+    "description": "Task that allows you to send custom notifications to Telegram",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "tags": [ "build", "release", "telegram", "bot", "messages", "notification" ],
+    "icons": {
+        "default": "images/index.png"
+    },
+    "scopes": [
+        "vso.work"
+    ],
+    "categories": [
+        "Build and release"
+    ],
+    "branding": {
+        "color": "rgb(4, 4, 5)",
+        "theme": "dark"
+    },
+    "content": {
+        "details": {
+            "path": "readme.md"
+        },
+        "license": {
+            "path": "eula.md"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/JackB1ack/TelegramNotificationTask"
+    },
+    "files": [ 
+        {
+            "path": "SendTelegramNotification",
+            "addressable": true
+        }
+    ],
+    "contributions": [
+        {
+            "id": "sample-telegram-task",
+            "type": "ms.vss-distributed-task.task",
+            "description": "Allows to send custom notification to Telegram chats",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "SendTelegramNotification"
+            }
+        }
+    ]
+}

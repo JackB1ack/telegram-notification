@@ -1,0 +1,20 @@
+{
+  "name": "telegramnotifytask",
+  "version": "1.0.0",
+  "description": "Sends a message to Telegram chat",
+  "main": "task.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Telegram",
+    "Notification"
+  ],
+  "author": "Evgeny Chernyi",
+  "license": "MIT",
+  "dependencies": {
+    "telegraf": "^3.20.0",
+    "vso-task-lib": "^0.5.5",
+    "vsts-task-lib": "^2.4.0"
+  }
+}
