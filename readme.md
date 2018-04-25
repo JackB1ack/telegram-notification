@@ -12,5 +12,4 @@ First of all you need to create a Telegram bot which will latter send all the no
 
 * **Talk to Bot Father**: follow [Bot Father's](https://core.telegram.org/bots#6-botfather) instructions and create a bot
 * **Save Bot Token**: this token will be used by the task
-
-
+![Bot Token](https://raw.githubusercontent.com/JackB1ack/telegram-notification/master/Screenshots/botfather.PNG)
