@@ -8,7 +8,7 @@ This task has some predifined options of what info (e.g build/release status, ID
 Follow the instructions below to configure the Telegram Notifications task to send messages to a group or chat.
 
 ## Create a Bot
-First of all you need to create a Telegram bot which will latter send all the notifications to your chats.
+First of all you need to create a Telegram bot which will later send all the notifications to your chats.
 
 * **Talk to Bot Father**: follow [Bot Father's](https://core.telegram.org/bots#6-botfather) instructions and create a bot
 * **Save Bot Token**: this token will be used by the task

@@ -65,6 +65,7 @@ function run() {
              if (tl.getBoolInput('teamUrl', false)) {
                  var teamLink = tl.getVariable("System.TeamFoundationCollectionUri");
                  var project = tl.getVariable("System.TeamProject");
+                 // TODO: ФИКСИТЬ ССЫЛКУ
                  body += "\n<b>Project URL:</b> " + teamLink + project;
              }          
              if (tl.getBoolInput('buildQueuedBy', false)) {
@@ -81,7 +82,7 @@ function run() {
              chats.forEach(chat => {
                  telegram.sendMessage(chat,body, {parse_mode: 'HTML'});   
              });         
-             console.log('Task done!');
+             console.log('Message sent!');
         }
         catch (err) {
             tl.setResult(tl.TaskResult.Failed, err.message);

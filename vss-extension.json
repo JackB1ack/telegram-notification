@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "telegram-notification-extension",
-    "version": "0.0.25",
+    "version": "0.0.26",
     "name": "Telegram Notification",
     "publisher": "EvgenyChernyi",
     "description": "Task that allows you to send custom notifications to Telegram",
