@@ -66,4 +66,4 @@ There are some basic predefined features both for build and release tasks.
 
 **Message** - add a custom message to your notification. You can use [html markup](https://core.telegram.org/bots/api#html-style).
 
-![NotificationResult](https://raw.githubusercontent.com/JackB1ack/telegram-notification/master/Screenshots/notification.PNG)
+* ![NotificationResult](https://raw.githubusercontent.com/JackB1ack/telegram-notification/master/Screenshots/notification.PNG)
