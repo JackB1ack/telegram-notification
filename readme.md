@@ -14,7 +14,7 @@ First of all you need to create a Telegram bot which will later send all the not
 * **Save Bot Token**: this token will be used by the task
 ![Bot Token](https://raw.githubusercontent.com/JackB1ack/telegram-notification/master/Screenshots/botfather.PNG)
 
-*Having a bot allows you to fully customize its appearance (nickname, user picture) and add it to as many chats or groups as you want*
+*Having a bot allows you to fully customize its appearance (nickname, user picture) and add it to as many chats or groups as you want.*
 
 ## Obtain chat IDs
 Currently Telegram does't offer a convinient way to obtain all chat ids from bot API. 
@@ -23,9 +23,9 @@ So there are two ways to do it:
 ### 1. Add  [@RawDataBot](https://t.me/RawDataBot) to your group
 
 Upon joining it will send a JSON where your chat id will be located at message.chat.id.
-![RawDataBot]()
+![RawDataBot](https://raw.githubusercontent.com/JackB1ack/telegram-notification/master/Screenshots/rawdatabot.PNG)
 
-### 2. Use built-in "Get chat ID" feature *Preview*
+### 2. Use built-in "Get chat ID" feature (*Preview*)
 
 If you want the bot to send notifications directly to you (not a group), trick with [@RawDataBot](https://t.me/RawDataBot) won't work.
 
