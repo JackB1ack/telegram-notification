@@ -4,7 +4,7 @@
     "version": "0.0.26",
     "name": "Telegram Notification",
     "publisher": "EvgenyChernyi",
-    "description": "Task that allows you to send custom notifications to Telegram",
+    "description": "Send custom notifications about your build/release process to Telegram",
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
