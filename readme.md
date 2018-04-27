@@ -25,6 +25,7 @@ So there are two ways to do it:
 
 Upon joining it will send a JSON where your chat id will be located at message.chat.id.
 ![RawDataBot](https://raw.githubusercontent.com/JackB1ack/telegram-notification/master/Screenshots/rawdatabot.PNG)
+
 **Don't forget to remove bot from chat right after.**
 
 ### 2. Use built-in "Get chat ID" feature (*Preview*)

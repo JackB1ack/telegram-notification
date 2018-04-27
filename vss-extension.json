@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "telegram-notification-extension",
-    "version": "0.0.26",
+    "version": "0.0.29",
     "name": "Telegram Notification",
     "publisher": "EvgenyChernyi",
     "description": "Send custom notifications about your build/release process to Telegram",

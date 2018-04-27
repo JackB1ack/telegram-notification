@@ -11,6 +11,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tl = require("vsts-task-lib/task");
 const Telegram = require('telegraf/telegram');
 const Telegraf = require('telegraf');
+const tgtools = require('./tgtools');
 
 if (tl.getBoolInput('getChatId',false)) {
     function run() {
@@ -35,38 +36,32 @@ function run() {
         try {
              var token = tl.getInput('botToken',true);
              var chats = tl.getDelimitedInput('chats',',',false);
-             var taskType = "Task";
              var body = "";
-             if (tl.getBoolInput('buildNumber', false)) {
-                 taskType = "Build-" + tl.getVariable("Build.BuildNumber");
-             } else if (tl.getBoolInput('releaseName', false)) {
-                taskType = tl.getVariable("Release.ReleaseName");
-             }
              
               if (tl.getBoolInput("taskStatus",false)) {             
                 switch (tl.getVariable("Agent.JobStatus")) {
                  case "Succeeded":
-                     body += "\n<b>✅ " + taskType + " Succeeded</b>"
+                     body += "\n<b>✅ Task Succeeded</b>"
                      break;
                 case "Failed":
-                     body += "\n<b>⛔️ " + taskType + " Failed</b>"
+                     body += "\n<b>⛔️ Task Failed</b>"
                      break;
                 case "SucceededWithIssues":
-                     body += "\n<b>⚠️ " + taskType + " has some Issues</b>"
+                     body += "\n<b>⚠️ Task has some Issues</b>"
                      break;
                  default:
                      break;
              }
             }
+            if (tl.getBoolInput('buildNumber', false)) {
+                body += "\n<b>#Build-" + tl.getVariable("Build.BuildNumber")+"</b>";
+            } else if (tl.getBoolInput('releaseName', false)) {
+                body += "\n<b>#" + tl.getVariable("Release.ReleaseName")+"</b>";
+            }
              if (tl.getInput('message', false) !== null) {
                  var message = tl.getInput('message', false);
                  body += "\n" + message;
-             }
-             if (tl.getBoolInput('teamUrl', false)) {
-                 var teamLink = tl.getVariable("System.TeamFoundationCollectionUri");
-                 var project = tl.getVariable("System.TeamProject");
-                 body += "\n<b>Project URL:</b> " + encodeURI(teamLink + project);
-             }          
+             }     
              if (tl.getBoolInput('buildQueuedBy', false)) {
                  var buildQueuedBy = tl.getVariable("Build.QueuedBy");
                  body += "\n<b>Build queued by:</b> " + buildQueuedBy;
@@ -75,6 +70,11 @@ function run() {
                  var releaseRequestedFor = tl.getVariable("Release.RequestedFor");
                  body += "\n<b>Release queued by:</b> " + releaseRequestedFor;
              }
+             if (tl.getBoolInput('teamUrl', false)) {
+                var teamLink = tl.getVariable("System.TeamFoundationCollectionUri");
+                var project = tl.getVariable("System.TeamProject");
+                body += "\n<b>Project URL: </b>" + tgtools.tglinkbuilder(teamLink+project, project);
+             }     
 
 
              const telegram = new Telegram(token);

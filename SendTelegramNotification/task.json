@@ -4,7 +4,7 @@
   "friendlyName": "Telegram Notification",
   "description": "Send custom message to telegram chat",
   "author": "Evgeny Chernyi",
-  "helpMarkDown": "https://github.com/JackB1ack/TelegramNotificationTask",
+  "helpMarkDown": "https://github.com/JackB1ack/telegram-notification",
   "category": "Utility",
   "visibility": [
     "Build",
@@ -66,7 +66,7 @@
         "defaultValue": "true",
         "required": false,
         "groupName": "notificationData",
-        "helpMarkDown": "Send information about task status (e.g Failed, Succeeded)"
+        "helpMarkDown": "Send information about task status (*e.g Failed, Succeeded*)"
     },
     {
         "name": "teamUrl",
@@ -75,7 +75,7 @@
         "defaultValue": "false",
         "required": false,
         "groupName": "notificationData",
-        "helpMarkDown": "Add project URL (e.g https://yourteam.visualstudio.com/)"
+        "helpMarkDown": "Add project URL (*e.g https://yourteam.visualstudio.com/*)"
     },
     {
         "name": "message",
@@ -84,7 +84,25 @@
         "defaultValue": "",
         "required": false,
         "groupName": "notificationData",
-        "helpMarkDown": "Custom text added to message. You can use [html markup](https://core.telegram.org/bots/api#html-style) (optional)"
+        "helpMarkDown": "Custom text added to message. You can use [html markup](https://core.telegram.org/bots/api#html-style) (*optional*)"
+    },
+    {
+        "name": "releaseName",
+        "type": "boolean",
+        "label": "Release - Name",
+        "defaultValue": "false",
+        "required": false,
+        "groupName": "notificationData",
+        "helpMarkDown": "Add release name to message"
+    },
+    {
+        "name": "releaseRequestedFor",
+        "type": "boolean",
+        "label": "Release - Created by",
+        "defaultValue": "false",
+        "required": false,
+        "groupName": "notificationData",
+        "helpMarkDown": "Add info about who caused the release"
     },
     {
         "name": "buildNumber",
@@ -104,27 +122,7 @@
         "required": false,
         "groupName": "notificationData",
         "helpMarkDown": "Add info about who started the build",
-        "visibleRule":"buildNumber = true"
-    },
-    {
-        "name": "releaseName",
-        "type": "boolean",
-        "label": "Release - Name",
-        "defaultValue": "false",
-        "required": false,
-        "groupName": "notificationData",
-        "helpMarkDown": "Add release name to message",
-        "visibleRule":"buildNumber = false"
-    },
-    {
-        "name": "releaseRequestedFor",
-        "type": "boolean",
-        "label": "Release - Requested for",
-        "defaultValue": "false",
-        "required": false,
-        "groupName": "notificationData",
-        "helpMarkDown": "Add info about who caused the release",
-        "visibleRule":"releaseName = true"
+        "visibleRule":"releaseRequestedFor = false"
     }
 ],
   "execution": {
