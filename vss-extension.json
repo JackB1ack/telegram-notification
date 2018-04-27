@@ -13,6 +13,9 @@
     "screenshots": [
         {
             "path": "Screenshots/main.png"
+        },
+        {
+            "path": "Screenshots/notification.png"
         }
 ],
     "tags": [ "build", "release", "telegram", "bot", "messages", "notification" ],

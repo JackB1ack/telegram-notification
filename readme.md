@@ -1,7 +1,7 @@
 
 # Telegram Notification VSTS Extension
 ![TelegramTask](https://raw.githubusercontent.com/JackB1ack/telegram-notification/master/Screenshots/main.PNG)
-Telegram Notification task uses [Telegram Bot API](https://core.telegram.org/bots) and allows you to send customizable notifications to your Telegram chats and groups.
+Telegram Notification task uses [Telegraf - Telegram Bot Framework for Node.js](https://github.com/telegraf/telegraf) and allows you to send customizable notifications to your Telegram chats and groups.
 This task has some predefined options of what info (e.g build/release status, ID etc.) to include to the message about your build/release process.
 
 # Getting started
@@ -18,7 +18,7 @@ First of all, you need to create a Telegram bot which will later send all the no
 *Having a bot allows you to fully customize its appearance (nickname, user picture) and add it to as many chats or groups as you want.*
 
 ## Obtain chat IDs
-Currently, Telegram doesn't offer a convenient way to obtain all chat ids from bot API. 
+Currently, Telegram doesn't offer a convenient way to obtain all chat IDs from bot API. 
 So there are two ways to do it:
 
 ### 1. Add  [@RawDataBot](https://t.me/RawDataBot) to your group
@@ -33,7 +33,7 @@ Upon joining it will send a JSON where your chat ID will be located at message.c
 If you want the bot to send notifications directly to you (not a group), the trick with [@RawDataBot](https://t.me/RawDataBot) won't work. You need to:
 
 * **Check "Get chat Id" in task properties**
-![GetChatId]()
+![GetChatId](https://github.com/JackB1ack/telegram-notification/blob/master/Screenshots/chatId.PNG)
 * **Queue build or release**: please make sure that this action won't affect any of your production processes. I suggest creating empty build\release definition just to get chat ID and then paste them into the real task.
 * **Type /chat**: while the task is running type */chat* in every chat where your bot is present
 ![SendChatCommand](https://raw.githubusercontent.com/JackB1ack/telegram-notification/master/Screenshots/chatId.PNG)
@@ -56,4 +56,9 @@ There are some basic predefined features both for build and release tasks.
 
 *NOTE: USE EITHER RELEASE OR BUILD RELATED OPTIONS DEPENDING ON YOUR PROCESS*
 
-**Message** - add custom message  to your notification. You can use [html markup](https://core.telegram.org/bots/api#html-style).
+**Add task status** - shows whether the task finished *successfully*, *failed* or *has some issues*.
+*In order this to work properly, don't forget to change run conditions of the task to "Even if a previous task has failed"*
+
+**Add project link** - adds a link to your team project 
+
+**Message** - add a custom message to your notification. You can use [html markup](https://core.telegram.org/bots/api#html-style).
