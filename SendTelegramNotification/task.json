@@ -56,7 +56,7 @@
         "defaultValue": "",
         "required": false,
         "groupName": "botConfig",
-        "helpMarkDown": "Target chat id's to notify (use coma as a delimiter). [More information about chat id] ()",
+        "helpMarkDown": "Target chat id's to notify (use comma as a delimiter). [More information about chat id] ()",
         "visibleRule":"getChatId = false"
     },
     {
