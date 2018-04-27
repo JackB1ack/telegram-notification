@@ -10,6 +10,11 @@
             "id": "Microsoft.VisualStudio.Services"
         }
     ],
+    "screenshots": [
+        {
+            "path": "Screenshots/main.png"
+        }
+],
     "tags": [ "build", "release", "telegram", "bot", "messages", "notification" ],
     "icons": {
         "default": "images/index.png"
@@ -29,12 +34,12 @@
             "path": "readme.md"
         },
         "license": {
-            "path": "eula.md"
+            "path": "LICENSE.md"
         }
     },
     "repository": {
         "type": "git",
-        "uri": "https://github.com/JackB1ack/TelegramNotificationTask"
+        "uri": "https://github.com/JackB1ack/telegram-notification"
     },
     "files": [ 
         {

@@ -38,7 +38,7 @@ function run() {
              var taskType = "Task";
              var body = "";
              if (tl.getBoolInput('buildNumber', false)) {
-                 taskType = "Build " + tl.getVariable("Build.BuildNumber");
+                 taskType = "Build-" + tl.getVariable("Build.BuildNumber");
              } else if (tl.getBoolInput('releaseName', false)) {
                 taskType = tl.getVariable("Release.ReleaseName");
              }
@@ -60,13 +60,12 @@ function run() {
             }
              if (tl.getInput('message', false) !== null) {
                  var message = tl.getInput('message', false);
-                 body += "\n"+message;
+                 body += "\n" + message;
              }
              if (tl.getBoolInput('teamUrl', false)) {
                  var teamLink = tl.getVariable("System.TeamFoundationCollectionUri");
                  var project = tl.getVariable("System.TeamProject");
-                 // TODO: ФИКСИТЬ ССЫЛКУ
-                 body += "\n<b>Project URL:</b> " + teamLink + project;
+                 body += "\n<b>Project URL:</b> " + encodeURI(teamLink + project);
              }          
              if (tl.getBoolInput('buildQueuedBy', false)) {
                  var buildQueuedBy = tl.getVariable("Build.QueuedBy");

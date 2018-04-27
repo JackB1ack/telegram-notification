@@ -47,7 +47,7 @@
         "defaultValue": "false",
         "required": false,
         "groupName": "botConfig",
-        "helpMarkDown": "Check this box if it's your first time running the task and you don't know chat ID."
+        "helpMarkDown": "Check this box if it's your first time running the task and you don't know chat ID. [**READ THIS FIRST**](https://github.com/JackB1ack/telegram-notification/blob/master/readme.md)"
     },
     {
         "name": "chats",
@@ -62,11 +62,20 @@
     {
         "name": "taskStatus",
         "type": "boolean",
-        "label": "Show task status",
+        "label": "Add task status",
         "defaultValue": "true",
         "required": false,
         "groupName": "notificationData",
         "helpMarkDown": "Send information about task status (e.g Failed, Succeeded)"
+    },
+    {
+        "name": "teamUrl",
+        "type": "boolean",
+        "label": "Add link to project",
+        "defaultValue": "false",
+        "required": false,
+        "groupName": "notificationData",
+        "helpMarkDown": "Add project URL (e.g https://yourteam.visualstudio.com/)"
     },
     {
         "name": "message",
@@ -78,49 +87,44 @@
         "helpMarkDown": "Custom text added to message. You can use [html markup](https://core.telegram.org/bots/api#html-style) (optional)"
     },
     {
-        "name": "teamUrl",
+        "name": "buildNumber",
         "type": "boolean",
-        "label": "Link to project",
+        "label": "Build - Number",
         "defaultValue": "false",
         "required": false,
         "groupName": "notificationData",
-        "helpMarkDown": "Add project URL (e.g https://yourteam.visualstudio.com/)"
+        "helpMarkDown": "Add build number to message",
+        "visibleRule":"releaseName = false"
     },
     {
         "name": "buildQueuedBy",
         "type": "boolean",
-        "label": "Queued By",
+        "label": "Build - Queued By",
         "defaultValue": "false",
         "required": false,
         "groupName": "notificationData",
-        "helpMarkDown": "Add info about who started the build"
-    },
-    {
-        "name": "buildNumber",
-        "type": "boolean",
-        "label": "Build Number",
-        "defaultValue": "false",
-        "required": false,
-        "groupName": "notificationData",
-        "helpMarkDown": "Add build number to message"
-    },
-    {
-        "name": "releaseRequestedFor",
-        "type": "boolean",
-        "label": "Requested for",
-        "defaultValue": "false",
-        "required": false,
-        "groupName": "notificationData",
-        "helpMarkDown": "Add info about who caused the release"
+        "helpMarkDown": "Add info about who started the build",
+        "visibleRule":"buildNumber = true"
     },
     {
         "name": "releaseName",
         "type": "boolean",
-        "label": "Release Name",
+        "label": "Release - Name",
         "defaultValue": "false",
         "required": false,
         "groupName": "notificationData",
-        "helpMarkDown": "Add release name to message"
+        "helpMarkDown": "Add release name to message",
+        "visibleRule":"buildNumber = false"
+    },
+    {
+        "name": "releaseRequestedFor",
+        "type": "boolean",
+        "label": "Release - Requested for",
+        "defaultValue": "false",
+        "required": false,
+        "groupName": "notificationData",
+        "helpMarkDown": "Add info about who caused the release",
+        "visibleRule":"releaseName = true"
     }
 ],
   "execution": {

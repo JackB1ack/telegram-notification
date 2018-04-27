@@ -13,6 +13,7 @@ First of all you need to create a Telegram bot which will later send all the not
 * **Talk to Bot Father**: follow [Bot Father's](https://core.telegram.org/bots#6-botfather) instructions and create a bot
 * **Save Bot Token**: this token will be used by the task
 ![Bot Token](https://raw.githubusercontent.com/JackB1ack/telegram-notification/master/Screenshots/botfather.PNG)
+* **Add your bot to every chat you want to be notified**
 
 *Having a bot allows you to fully customize its appearance (nickname, user picture) and add it to as many chats or groups as you want.*
 
@@ -24,15 +25,20 @@ So there are two ways to do it:
 
 Upon joining it will send a JSON where your chat id will be located at message.chat.id.
 ![RawDataBot](https://raw.githubusercontent.com/JackB1ack/telegram-notification/master/Screenshots/rawdatabot.PNG)
+**Don't forget to remove bot from chat right after.**
 
 ### 2. Use built-in "Get chat ID" feature (*Preview*)
 
-If you want the bot to send notifications directly to you (not a group), trick with [@RawDataBot](https://t.me/RawDataBot) won't work.
+If you want the bot to send notifications directly to you (not a group), trick with [@RawDataBot](https://t.me/RawDataBot) won't work. You need to:
 
 * **Check "Get chat Id" in task properties**
 ![GetChatId]()
 * **Queue build or release**: please make sure that this action won't affect any of your production processes. I suggest creating empty build\release definition just to get chat ID and then paste them to real task.
-* **Type /chat**: while task is running type /chat in every chat where bot is present
+* **Type /chat**: while task is running type /chat in every chat where your bot is present
+![SendChatCommand]()
 * **Type /stop**: type this command to finish task execution
-* **Paste your chat IDs to task properties**: copy all your ID to task propety (use coma as delimeter *e.g -123456678,321654987*)
+* **Paste your chat IDs to task properties**: copy all your IDs to task propety (use coma as delimeter *e.g -123456678,321654987*)
 
+## Customize your message
+
+There are some basic predifined features both for build and release tasks.
