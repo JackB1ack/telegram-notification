@@ -37,9 +37,9 @@ If you want the bot to send notifications directly to you (not a group), the tri
 ![GetChatId](https://raw.githubusercontent.com/JackB1ack/telegram-notification/master/Screenshots/getchatid.PNG)
 
 * **Queue build or release**: please make sure that this action won't affect any of your production processes. I suggest creating empty build\release definition just to get chat ID and then paste them into the real task.
-* **Type /chat**: while the task is running type */chat* in every chat where your bot is present
+* **Type /chat**: while the task is running use */chat* command in every chat where your bot is present
 ![SendChatCommand](https://raw.githubusercontent.com/JackB1ack/telegram-notification/master/Screenshots/chatId.PNG)
-* **Type /stop**: type this command to finish task execution
+* **Type /stop**: use this command to finish task execution
 * **Paste your chat IDs to task properties**: copy all your IDs to task property (use comma as delimiter *e.g -123456678,321654987*)
 
 ## Customize your message
@@ -58,12 +58,11 @@ There are some basic predefined features both for build and release tasks.
 
 *NOTE: USE EITHER RELEASE OR BUILD RELATED OPTIONS DEPENDING ON YOUR PROCESS*
 
-**Add task status** - shows whether the task finished *successfully*, *failed* or *has some issues*.
+* **Add task status** - shows whether the task finished *successfully*, *failed* or *has some issues*.
 
 *In order this to work properly, don't forget to change run conditions of the task to "Even if a previous task has failed"*
 
-**Add project link** - adds a link to your team project 
+* **Add project link** - adds a link to your team project 
+* **Message** - add a custom message to your notification. You can use [html markup](https://core.telegram.org/bots/api#html-style).
 
-**Message** - add a custom message to your notification. You can use [html markup](https://core.telegram.org/bots/api#html-style).
-
-* ![NotificationResult](https://raw.githubusercontent.com/JackB1ack/telegram-notification/master/Screenshots/notification.PNG)
+![NotificationResult](https://raw.githubusercontent.com/JackB1ack/telegram-notification/master/Screenshots/notification.PNG)
