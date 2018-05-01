@@ -2,14 +2,14 @@
 # Telegram Notification VSTS Extension
 ![TelegramTask](https://raw.githubusercontent.com/JackB1ack/telegram-notification/master/Screenshots/main.PNG)
 Telegram Notification task uses [Telegraf - Telegram Bot Framework for Node.js](https://github.com/telegraf/telegraf) and allows you to send customizable notifications to your Telegram chats and groups.
-This task has some predefined options of what info (e.g build/release status, ID etc.) to include to the message about your build/release process.
+This task has some predefined options of what info (e.g build/release status, ID etc.) to include in the message about your build/release process.
 
 # Getting started
 
-Only three steps to start receive your notifications:
-**1.Create a Bot**
-**2.Get Chat Ids**
-**3.Customize your notifications**
+Only three steps to start receiving your notifications:
+**1. Create a Bot**
+**2. Get Chat Ids**
+**3. Customize your notifications**
 
 Follow the instructions below to configure the Telegram Notifications task to send messages to a group or chat.
 
