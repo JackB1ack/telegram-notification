@@ -18,6 +18,9 @@
             "path": "Screenshots/notification.png"
         }
 ],
+    "galleryFlags": [
+        "Public"
+],
     "tags": [ "build", "release", "telegram", "bot", "messages", "notification" ],
     "icons": {
         "default": "images/index.png"

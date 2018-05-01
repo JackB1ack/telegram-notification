@@ -5,6 +5,12 @@ Telegram Notification task uses [Telegraf - Telegram Bot Framework for Node.js](
 This task has some predefined options of what info (e.g build/release status, ID etc.) to include to the message about your build/release process.
 
 # Getting started
+
+Only three steps to start receive your notifications:
+**1.Create a Bot**
+**2.Get Chat Ids**
+**3.Customize your notifications**
+
 Follow the instructions below to configure the Telegram Notifications task to send messages to a group or chat.
 
 ## Create a Bot
@@ -46,17 +52,7 @@ If you want the bot to send notifications directly to you (not a group), the tri
 
 There are some basic predefined features both for build and release tasks.
 
-**For Release**
-
-* **Name** 
-* **Created by**
-
-**For Build**
-
-* **Number**
-* **Queued by**
-
-*NOTE: USE EITHER RELEASE OR BUILD RELATED OPTIONS DEPENDING ON YOUR PROCESS*
+**General**
 
 * **Add task status** - shows whether the task finished *successfully*, *failed* or *has some issues*.
 
@@ -64,5 +60,17 @@ There are some basic predefined features both for build and release tasks.
 
 * **Add project link** - adds a link to your team project 
 * **Message** - add a custom message to your notification. You can use [html markup](https://core.telegram.org/bots/api#html-style).
+
+**For Release**
+
+* **Name** - The name of the current release.
+* **Created by** - The display name of identity that triggered the release.
+
+**For Build**
+
+* **Number** - The name of the completed build.
+* **Queued by** - The display name of identity that queued the build.
+
+*NOTE: USE EITHER RELEASE OR BUILD RELATED OPTIONS DEPENDING ON YOUR PROCESS*
 
 ![NotificationResult](https://raw.githubusercontent.com/JackB1ack/telegram-notification/master/Screenshots/notification.PNG)

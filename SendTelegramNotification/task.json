@@ -47,7 +47,7 @@
         "defaultValue": "false",
         "required": false,
         "groupName": "botConfig",
-        "helpMarkDown": "Check this box if it's your first time running the task and you don't know chat ID. [**READ THIS FIRST**](https://github.com/JackB1ack/telegram-notification/blob/master/readme.md)"
+        "helpMarkDown": "Check this box **ONLY** if it's your first time running the task and you don't know chat ID. [**READ THIS FIRST**](https://github.com/JackB1ack/telegram-notification/blob/master/readme.md)"
     },
     {
         "name": "chats",
