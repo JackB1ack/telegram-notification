@@ -11,6 +11,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tl = require("vsts-task-lib/task");
 const Telegram = require('telegraf/telegram');
 const Telegraf = require('telegraf');
+const SocksAgent = require('socks5-https-client/lib/Agent');
 const tgtools = require('./tgtools');
 
 if (tl.getBoolInput('getChatId',false)) {
@@ -76,8 +77,16 @@ function run() {
                 body += "\n<b>Project URL: </b>" + tgtools.tglinkbuilder(teamLink+project, project);
              }     
 
-
-             const telegram = new Telegram(token);
+             const telegramOptions = {};
+             if (tl.getBoolInput('useProxy', false)) {
+                telegramOptions.agent = new SocksAgent({
+                   socksHost: task.getInput('Host', true),
+                   socksPort: task.getInput('Port', true),
+                   socksUsername: task.getInput('Username', true),
+                   socksPassword: task.getInput('Password', true),
+                });
+             } 
+             const telegram = new Telegram(token, telegramOptions);
              chats.forEach(chat => {
                  telegram.sendMessage(chat,body, {parse_mode: 'HTML'});   
              });         
