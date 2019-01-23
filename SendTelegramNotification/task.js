@@ -80,10 +80,10 @@ function run() {
              const telegramOptions = {};
              if (tl.getBoolInput('useProxy', false)) {
                 telegramOptions.agent = new SocksAgent({
-                   socksHost: task.getInput('proxyHost', true),
-                   socksPort: task.getInput('proxyPort', true),
-                   socksUsername: task.getInput('proxyUsername', true),
-                   socksPassword: task.getInput('proxyPassword', true),
+                   socksHost: task.getInput('proxyHost', false),
+                   socksPort: task.getInput('proxyPort', false),
+                   socksUsername: task.getInput('proxyUsername', false),
+                   socksPassword: task.getInput('proxyPassword', false),
                 });
              } 
              const telegram = new Telegram(token, telegramOptions);
