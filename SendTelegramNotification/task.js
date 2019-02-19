@@ -13,12 +13,15 @@ const Telegram = require('telegraf/telegram');
 const Telegraf = require('telegraf');
 const tgtools = require('./tgtools');
 
+
 if (tl.getBoolInput('getChatId',false)) {
     function run() {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                console.log("You now can get chat IDs from your chats \n Use /chat command to get the ID \n Then /stop to finish the task");
-                const bot = new Telegraf(tl.getInput('botToken', true));
+                console.log("You now can get chat IDs from your chats: \n - Use /chat command to get the ID \n - Then /stop to finish the task \n\n *If something goes wrong - clear chat history*");
+                const bot = new Telegraf(tl.getInput('botToken', true),{
+                    telegram: tgtools.getProxyCfg()
+                });
                 bot.command('/chat', (ctx) => ctx.reply(ctx.chat));
                 bot.command('/stop', function () { bot.stop(); });
                 bot.startPolling();
@@ -77,7 +80,7 @@ function run() {
              }     
 
 
-             const telegram = new Telegram(token);
+             const telegram = new Telegram(token, tgtools.getProxyCfg());
              chats.forEach(chat => {
                  telegram.sendMessage(chat,body, {parse_mode: 'HTML'});   
              });         

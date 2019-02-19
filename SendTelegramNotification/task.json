@@ -60,6 +60,52 @@
         "visibleRule":"getChatId = false"
     },
     {
+        "name": "useProxy",
+        "type": "boolean",
+        "label": "Use proxy",
+        "defaultValue": "false",
+        "required": false,
+        "groupName": "botConfig"
+    },
+    {
+        "name": "proxyHost",
+        "type": "string",
+        "label": "Host",
+        "defaultValue": "",
+        "required": false,
+        "groupName": "botConfig",
+        "visibleRule":"useProxy = true"
+    },
+    {
+        "name": "proxyPort",
+        "type": "string",
+        "label": "Port",
+        "defaultValue": "",
+        "required": false,
+        "groupName": "botConfig",
+        "visibleRule":"useProxy = true"
+    },
+    {
+        "name": "proxyUsername",
+        "type": "string",
+        "label": "Username",
+        "defaultValue": "",
+        "required": false,
+        "groupName": "botConfig",
+        "visibleRule":"useProxy = true",
+        "helpMarkDown": "(*optional*)"
+    },
+    {
+        "name": "proxyPassword",
+        "type": "string",
+        "label": "Password",
+        "defaultValue": "",
+        "required": false,
+        "groupName": "botConfig",
+        "visibleRule":"useProxy = true",
+        "helpMarkDown": "(*optional*)"
+    },
+    {
         "name": "taskStatus",
         "type": "boolean",
         "label": "Add task status",

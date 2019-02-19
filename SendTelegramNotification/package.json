@@ -13,6 +13,7 @@
   "author": "Evgeny Chernyi",
   "license": "MIT",
   "dependencies": {
+    "https-proxy-agent": "^2.2.1",
     "telegraf": "^3.20.0",
     "vso-task-lib": "^0.5.5",
     "vsts-task-lib": "^2.4.0"
