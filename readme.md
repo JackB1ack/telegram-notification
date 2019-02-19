@@ -1,5 +1,5 @@
 
-# Telegram Notification VSTS Extension
+# Telegram Notifications for Azure Pipelines
 ![TelegramTask](https://raw.githubusercontent.com/JackB1ack/telegram-notification/master/Screenshots/main.PNG)
 Telegram Notification task uses [Telegraf - Telegram Bot Framework for Node.js](https://github.com/telegraf/telegraf) and allows you to send customizable notifications to your Telegram chats and groups.
 This task has some predefined options of what info (e.g build/release status, ID etc.) to include in the message about your build/release process.
